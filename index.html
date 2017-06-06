@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/fotorama.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/akrobat.css">
+    <link rel="stylesheet" href="css/ptsans.css">
+    <link rel="stylesheet" href="css/myriadpro.css">
+
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        function loadFont(a, b, c, d) {
+            function e() {
+                if (!window.FontFace) return !1;
+                var a = new FontFace("t", 'url("data:application/font-woff2,") format("woff2")', {}),
+                    b = a.load();
+                try {
+                    b.then(null, function() {})
+                } catch (c) {}
+                return "loading" === a.status
+            }
+            var f = navigator.userAgent,
+                g = !window.addEventListener || f.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/) && !f.match(/Chrome/);
+            if (!g) {
+                var h = {};
+                try {
+                    h = localStorage || {}
+                } catch (i) {}
+                var j = "x-font-" + a,
+                    k = j + "url",
+                    l = j + "css",
+                    m = h[k],
+                    n = h[l],
+                    o = document.createElement("style");
+                if (o.rel = "stylesheet", document.head.appendChild(o), !n || m !== b && m !== c) {
+                    var p = c && e() ? c : b,
+                        q = new XMLHttpRequest;
+                    q.open("GET", p), q.onload = function() {
+                        q.status >= 200 && q.status < 400 && (h[k] = p, h[l] = q.responseText, d || (o.textContent = q.responseText))
+                    }, q.send()
+                } else o.textContent = n
+            }
+        }
+
+        loadFont('Akrobat', 'css/akrobat.css');
+        loadFont('PT Sans', 'css/ptsans.css');
+        loadFont('Myriad Pro', 'css/myriadpro.css');
+    </script>
+</head>
+
+<body>
+    <section id="header">
+        <div class="top">
+            <img class="logo" src="img/logo.png" alt="">
+            <div class="tm">
+                <span class="tel"><a href="tel:+79099307445">+7 909 930 74 45</a></span>
+                <div class="menu">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <h1>Установка дверей в Москве и Московской области.<br>
+  Гарантия на проделанную работу 24 месяца!</h1>
+
+
+
+    </section>
+    <div class="aftertop">
+        закажите установку межкомнатных дверей <a href="#" class="order">прямо сейчас</a> <span class="second_block">и мы выполним врезку замков абсолютно бесплатно!</span>
+    </div>
+    <div class="social">
+        <a href="#" class="inst"></a>
+        <a href="#" class="fb"></a>
+        <a href="#" class="yt"></a>
+    </div>
+
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Наша сервисная компания занимается монтажом межкомнатных дверей более 7 лет. Для установки используется только современное оборудование, которое позволяет устанавливать двери на высоком уровне. Door Service не боится давать гарантию на проделанную
+            работу!
+        </p>
+    </section>
+
+    <section id="adv">
+        <h2>Преимущества</h2>
+        <div class="circles ">
+
+
+
+            <div class="circles_element">
+                <div class="circle">
+                    <span>7</span> лет
+                </div>
+                <p>Назад мы установили <br>первую дверь</p>
+            </div>
+            <div class="circles_element">
+                <div class="circle">
+                    <span>6</span> дверей
+                </div>
+                <p>Устанавливает одна <br> бригада за день</p>
+            </div>
+            <div class="circles_element">
+                <div class="circle">
+                    <span>11</span> бригад
+                </div>
+                <p>Займутся установкой <br> ваших дверей уже завтра</p>
+            </div>
+            <div class="circles_element">
+                <div class="circle">
+                    <span>24</span> месяца
+                </div>
+                <p>Гарантия на проделанную работу</p>
+            </div>
+
+
+        </div>
+    </section>
+    <section id="works">
+        <h2>Наши работы</h2>
+        <div class="triggers">
+            <a href="#all" class="active">Все</a>
+            <a href="#1">Распашные</a>
+            <a href="#2">Раздвижные</a>
+            <a href="#3">Нестандартные</a>
+        </div>
+        <div class="slider">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+
+        </div>
+    </section>
+    <section id="info">
+        <div class="container">
+            <div class="text-before">
+                Фрезка фурнитуры
+            </div>
+            <div class="text">
+                <h3>Фрезка фурнитуры по шаблону (как с завода)</h3>
+                <p>Врезка фурнитуры производится с использованием высокоточных шаблонов,что позволяет минимизировать риск ошибки и добиться посадки замков и петель как на заводе</p>
+            </div>
+            <div class="text-after">
+                Москва
+            </div>
+        </div>
+        <div class="container-rev">
+            <div class="text-before">
+                Работа без пыли
+            </div>
+            <div class="text-wrapper">
+                <div class="text">
+                    <h3>В вашем доме не останется ни пылинки <br>после работы наших мастеров</h3>
+                    <p>все работы производятся с применением промышленного пылесоса
+                    </p>
+                </div>
+            </div>
+            <div class="text-after">
+                Москва
+            </div>
+        </div>
+    </section>
+
+
+    <a href="#" class="scrollToTop"></a>
+
+    <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="js/fotorama.js" charset="utf-8"></script>
+    <script async src="js/scripts.js" charset="utf-8"></script>
+</body>
+
+</html>
