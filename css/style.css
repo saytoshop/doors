@@ -1,7 +1,8 @@
 html {}
 
 body {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 2450px;
     font-family: Akrobat;
 }
 
@@ -34,6 +35,7 @@ h1 {
     position: fixed;
     top: 0;
     width: 100%;
+        max-width: 2450px;
     box-sizing: border-box;
     z-index: 10;
 }
@@ -95,15 +97,16 @@ h1 {
 }
 
 .social {
-    position: fixed;
-    bottom: 100px;
-    left: 219px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 29px;
-    height: 140px;
+  position: fixed;
+  bottom: 100px;
+  padding-left: 219px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 29px;
+  height: 140px;
+  z-index: 20;
 }
 
 .social a {
@@ -284,6 +287,7 @@ h2 {
 #info {
     color: #5d5d5d;
     text-transform: uppercase;
+    padding-top: 160px;
 }
 
 .container {
@@ -294,13 +298,14 @@ h2 {
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    margin: 0 50px 0 250px;
+
+    margin: 0 250px 0 330px;
     position: relative;
 }
 
 .text {
     background-color: #ffffff;
-    padding: 300px 180px 0 15px;
+    padding: 300px 180px 0 0;
     width: 1010px;
     height: 1186px;
     box-sizing: border-box;
@@ -326,7 +331,8 @@ h3 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: 180px 50px 0 50px;
+
+    margin: 180px 320px 0 170px;
     position: relative;
 }
 
@@ -354,16 +360,16 @@ h3 {
 
 .text-after {
     position: absolute;
-    right: -50px;
+    right: -160px;
     bottom: 15px;
     transform: rotate(90deg);
 }
 
 .text-before {
-    position: absolute;
-    left: -50px;
-    top: 15px;
-    transform: rotate(90deg);
+  position: absolute;
+      left: -320px;
+      top: 140px;
+      transform: rotate(90deg);
 }
 
 .container-rev .text-before {
@@ -373,4 +379,155 @@ h3 {
 
 .container-rev .text-after {
     bottom: 150px;
+}
+
+#calc {
+    background-color: #282b2b;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 0 210px 180px 410px;
+}
+
+#calc h2 {
+    padding: 109px 0 157px;
+    text-align: center;
+}
+
+.calc {
+    font-size: 28px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    margin: 0 auto;
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 45px;
+}
+
+.calc h3 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.calc ul {
+    padding: 0;
+    margin: 0;
+}
+
+.calc li {
+    list-style: none;
+    display: flex;
+    width: 890px;
+    justify-content: space-between;
+}
+
+.desc {
+    flex-grow: 1;
+}
+
+.calc a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.value {
+    padding-left: 15px;
+}
+
+.calc-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    align-items: baseline;
+}
+
+.total {
+    display: flex;
+    align-items: baseline;
+    padding-bottom: 25px;
+    border-bottom: 3px solid #ffffff;
+}
+
+.total-value {
+    font-size: 48px;
+    padding-right: 60px;
+
+}
+.total-value::after{
+  content: "";
+  width: 1px;
+  height: 46px;
+  background-image: url("../img/s.png");
+}
+
+.total a {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    padding-left: 40px;
+}
+
+#contacts {
+    font-size: 30px;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contacts h3 {
+    font-size: 36px;
+    text-transform: uppercase;
+        margin: 80px 0;
+}
+
+.inv {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.contacts_form {
+    width: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 100px 0 0 320px;
+}
+
+.send {
+  color: #000000;
+    font-size: 36px;
+    text-transform: uppercase;
+    padding-top: 39px;
+}
+
+.contacts_form form {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+}
+
+.contacts_form input {
+    color: #9d9d9d;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 30px 0 25px;
+    border-left: none;
+    border-right: none;
+    border-top: 4px solid;
+    border-bottom: none;
+}
+.contacts_form form .last{
+    border-bottom:  4px solid;
+}
+.work{
+  margin: 260px 0 170px;
+}
+.map {
+    flex-grow: 1;
+}
+.map iframe {
+    width: 100%;
+    height: 100%;
 }
