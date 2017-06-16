@@ -4,6 +4,7 @@ body {
     margin: 0 auto;
     max-width: 2450px;
     font-family: Akrobat;
+    font-size: 30px;
 }
 
 h1 {
@@ -44,7 +45,7 @@ h1 {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0 110px 0 219px;
-    border-bottom: 25px solid rgba(255, 255, 255, 0.72);
+    /*  border-bottom: 25px solid rgba(255, 255, 255, 0.72);*/
     position: fixed;
     top: 0;
     width: 100%;
@@ -52,15 +53,18 @@ h1 {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .tel a {
     color: #d7d4d2;
-    font-size: 30px;
     font-weight: bold;
     line-height: 25px;
-    margin-right: 222px;
     text-decoration: none;
+}
+
+.mm {
+    display: none;
 }
 
 .menu {
@@ -75,9 +79,29 @@ h1 {
     width: 772px;
 }
 
+.menu.active {
+      padding-top: 30px;
+    position: fixed;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .9);
+        width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.menu.active a {
+    flex-grow: 1;
+    font-size: 30px;
+}
+.menu.active a.active {
+    border-bottom: none;
+}
+
 .menu a {
     color: #d7d4d2;
-    font-size: 30px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -106,7 +130,6 @@ h1 {
 
 .aftertop {
     font-family: Akrobat;
-    font-size: 30px;
     text-transform: uppercase;
     color: #5d5d5d;
     font-weight: 400;
@@ -217,6 +240,7 @@ h2 {
 #adv h2 {
     color: #5d5d5d;
     padding: 93px 0 70px;
+    text-transform: uppercase;
 }
 
 .circles {
@@ -229,6 +253,7 @@ h2 {
     justify-content: space-around;
     color: #999999;
     margin-bottom: 150px;
+    font-size: 16px;
 }
 
 .circle {
@@ -404,7 +429,7 @@ h3 {
 .container-rev .text {
     background-color: #ffffff;
     padding: 490px 0 0 20px;
-    width: 620px;
+    width: 650px;
     height: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -554,14 +579,12 @@ h3 {
 
 .total a {
     color: #fff;
-    font-size: 30px;
     font-weight: 700;
     text-decoration: none;
     padding-left: 40px;
 }
 
 #contacts {
-    font-size: 30px;
     color: #000;
     font-weight: bold;
     display: -webkit-box;
@@ -655,9 +678,459 @@ h3 {
     right: 55px;
     z-index: 10;
 }
-.vline{
-  height: 100%;
-  width: 165px;
-  border-right: 3px solid #a2a2a2;
-  position: fixed;
+
+.vline {
+    height: 100%;
+    width: 165px;
+    border-right: 3px solid #a2a2a2;
+    position: fixed;
+    top: 0;
+}
+
+.layer {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+.sendme_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: auto;
+    height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+/*------------------------- media ---------------------------*/
+
+@media (max-width: 2048px) {
+    .text {
+        padding: 300px 50px 0 0;
+        width: 760px;
+    }
+}
+
+.container-rev {
+    max-width: 100%;
+    height: 860px;
+    background-size: 1000px;
+}
+
+.container-rev .text {
+    padding: 190px 0 0 20px;
+}
+
+.container-rev .text-before {
+    left: -180px;
+}
+
+#calc {
+    padding: 0 210px 180px 220px;
+}
+
+.calc ul {
+    margin-right: 40px;
+}
+
+.calc li {
+    width: 800px;
+}
+
+@media (max-width: 1900px) {
+    body {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 24px;
+        padding: 50px 0 80px;
+    }
+    h3 {
+        font-size: 21px;
+    }
+    .top {
+        height: 50px;
+        padding: 0 110px;
+        z-index: 50;
+    }
+    .top .logo {
+        height: 30px;
+    }
+    .menu {
+        width: 555px;
+    }
+    #about p {
+        width: 660px;
+        font-size: 17px;
+        line-height: 24px;
+        padding-bottom: 130px;
+    }
+    .vline {
+        width: 90px;
+    }
+    #calc, #about {
+        background-size: 90px;
+    }
+    .social {
+        padding-left: 110px;
+        width: 15px;
+        height: 80px;
+    }
+    .social a {
+        flex-grow: 0;
+        background-size: contain;
+        height: 15px;
+    }
+    #adv h2 {
+        font-size: 32px;
+    }
+    #works {
+        padding-bottom: 60px;
+    }
+    #works h2 {
+        font-size: 24px;
+        padding: 38px 0 25px;
+    }
+    .triggers {
+        width: 350px;
+    }
+    .triggers a {
+        font-size: 18px;
+        padding-bottom: 48px;
+    }
+    .text {
+        padding: 40px 80px 45px 40px;
+        width: 600px;
+        height: auto;
+    }
+    .text p {
+        font-size: 14px;
+    }
+    .circles {
+        width: 700px;
+        margin-bottom: 110px;
+    }
+    .circle {
+        width: 86px;
+        height: 86px;
+        font-size: 11px;
+    }
+    .circle::before {
+        width: 92px;
+        height: 92px;
+        margin-top: -46px;
+        margin-left: -46px;
+    }
+    .circle::after {
+        width: 94px;
+        height: 94px;
+        margin-top: -48px;
+        margin-left: -48px;
+    }
+    .circle span {
+        font-size: 48px;
+        padding: 2px;
+    }
+    .circles_element p {
+        font-size: 11px;
+    }
+    #info {
+        padding-top: 80px;
+    }
+    #info .container {
+        background-size: 750px;
+        height: 650px;
+        margin: 0 100px 0 170px;
+    }
+    .container-rev {
+        background-size: 100%;
+        margin: 180px 100px 0 170px;
+    }
+    .text-wrapper {
+        height: auto;
+    }
+    .text-after {
+        right: -50px;
+    }
+    .container-rev .text-wrapper::before {
+        content: none;
+    }
+    .container-rev .text {
+        padding: 48px 215px 48px 60px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    #calc {
+        padding: 0 100px 90px 200px;
+    }
+    #calc h2 {
+        padding: 56px 0 79px;
+    }
+    .calc {
+        font-size: 14px;
+        max-width: 1060px;
+    }
+    .calc h3 {
+        font-size: 14px;
+    }
+    .calc ul {
+        margin-right: 0;
+    }
+    .calc li {
+        width: 450px;
+    }
+    .total-value {
+        font-size: 24px;
+    }
+    .total {
+        padding-bottom: 10px;
+    }
+    .calc-footer {
+        max-width: 1060px;
+        margin: auto;
+    }
+    .calc-footer img {
+        height: 38px;
+    }
+    #contacts h3 {
+        font-size: 18px;
+        margin: 47px 0 20px;
+    }
+    #contacts p {
+        font-size: 16px;
+    }
+    .contacts_form {
+        padding-top: 60px;
+        padding-left: 200px;
+        width: 360px;
+        margin-right: 100px;
+    }
+    .contacts_form img {
+        height: 44px;
+    }
+    .contacts_form input {
+        font-size: 17px;
+        padding: 16px 0 16px;
+    }
+    .send {
+        font-size: 21px;
+    }
+    .work {
+        margin: 150px 0 100px;
+    }
+    .scrollToTop {
+        right: 56px;
+        width: 24px;
+        height: 21px;
+        background-size: contain;
+    }
+}
+
+@media (max-width: 1279px) {
+    .top {
+        padding: 0 60px;
+    }
+    .menu {
+        width: 355px;
+    }
+    .calc {
+        flex-direction: column;
+        align-items: center;
+    }
+    #calc {
+        padding: 0 40px 40px 80px;
+    }
+    #calc h2 {
+        padding: 56px 0 19px;
+    }
+    .calc h3 {
+        margin-top: 20px;
+    }
+    .calc li {
+        padding: 3px 0;
+    }
+    #info .container {
+        margin: 0 40px 0 80px;
+    }
+    .text-before {
+        left: -120px;
+    }
+    .container-rev .text-before {
+        left: -110px;
+    }
+    .text-after {
+        right: -40px;
+    }
+    .container-rev .text {
+        padding: 18px 10px 28px 20px;
+        width: 550px;
+    }
+    .container-rev {
+        margin: 40px 40px 0 80px;
+        height: auto;
+        min-height: 500px;
+    }
+    .vline {
+        width: 40px;
+    }
+    #calc, #about {
+        background-size: 40px;
+    }
+    .social {
+        padding-left: 50px;
+    }
+    .contacts_form {
+        padding-top: 30px;
+        padding-left: 80px;
+        margin-right: 50px;
+    }
+    .work {
+        margin: 50px 0 30px;
+    }
+}
+
+@media (max-width: 959px) {
+    .vline {
+        display: none;
+    }
+    .social {
+        padding-left: 10px;
+    }
+    .top {
+        padding: 10px;
+    }
+    .menu {
+        width: 330px;
+    }
+    .scrollToTop {
+        right: 20px;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    h2 {
+        font-size: 24px;
+        padding: 30px 0 40px;
+    }
+    #about p {
+        width: auto;
+        padding: 0 80px 80px;
+    }
+    #contacts {
+        flex-direction: column;
+        align-items: center;
+    }
+    .map {
+        width: 100%;
+        height: 300px;
+    }
+    #calc, #about {
+        background-image: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .circles {
+        width: 600px;
+    }
+    .container-rev .text {
+        width: 450px;
+    }
+    .aftertop {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 639px) {
+    .mm {
+        display: block;
+        background-image: url(../img/menu.png);
+        width: 41px;
+        height: 41px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+    .menu {
+        display: none;
+    }
+    .triggers {
+        width: 300px;
+    }
+    .triggers a {
+        font-size: 14px;
+    }
+    .circles {
+        width: auto;
+        flex-direction: column;
+    }
+    .contacts_form {
+        padding-left: 0;
+        margin-right: 0;
+        width: 250px;
+    }
+    .answers {
+        width: 250px;
+    }
+    .contacts_form form {
+        width: 250px;
+    }
+    .container-rev .text {
+        width: 250px;
+    }
+    .container-rev {
+        min-height: 300px;
+        background-image: none;
+    }
+    .text {
+        padding: 0;
+        width: 280px;
+        height: auto;
+    }
+    #info .container {
+        margin: 0 10px 0 40px;
+        height: auto;
+        background-image: none;
+    }
+    .text-after {
+        right: -20px;
+    }
+    .text-before {
+        left: -80px;
+    }
+    .container-rev .text-before {
+        left: -70px;
+    }
+    .container-rev {
+        margin: 40px 10px 0 40px;
+    }
+    .container-rev .text {
+        width: 280px;
+    }
+    #about p {
+        padding: 0 40px 80px;
+    }
+    .calc li {
+        width: 250px;
+    }
+    .calc-footer {
+        flex-direction: column;
+    }
+    .total {
+        margin-top: 50px;
+    }
 }

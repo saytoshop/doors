@@ -45,9 +45,10 @@ $(menu_selector + " a").click(function(e) {
 
     var hash = $(this).attr("href");
     var target = $(hash);
+    var d = $(".top").height()+30;
 
     $("html, body").animate({
-        scrollTop: target.offset().top - 120
+        scrollTop: target.offset().top - d
     }, 500, function() {
         window.location.hash = hash;
         $(document).on("scroll", onScroll);
@@ -61,7 +62,16 @@ $('.slider').slick({
     slidesToShow: 4,
     slidesToScroll: 4,
     adaptiveHeight: true,
-    arrows: true
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 639,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+        }
+    }
+]
 });
 
 $(".triggers a").click(function(e) {
@@ -97,4 +107,11 @@ $(".calc a").click(function(e) {
         total = total + Number($(this).data("v"));
     });
     $("#total-value").html(total).data("v", total);
+});
+
+$(".mm").click(function(e) {
+  $(".menu").toggleClass("active");
+});
+$("body").on( "click", ".menu.active a","click", function() {
+  $(".menu").removeClass("active");
 });
