@@ -109,6 +109,20 @@ $(".calc a").click(function(e) {
     $("#total-value").html(total).data("v", total);
 });
 
+$(".total a").click(function(e) {
+    e.preventDefault();
+
+    var total = $("#total-value").data("v");
+    $("#send-total").val(total);
+    $(".st span").html(total);
+    $("#layer").addClass("active");
+});
+
+$(".close").click(function(e) {
+    e.preventDefault();
+    $("#layer").removeClass("active");
+});
+
 $(".mm").click(function(e) {
   $(".menu").toggleClass("active");
 });
