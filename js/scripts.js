@@ -1,4 +1,11 @@
+var numo = $(".circles").offset();
 $('.scrollToTop').click(function(e) {
+    $("html, body").animate({
+        scrollTop: 0
+    }, "slow");
+    e.preventDefault()
+});
+$('.top .logo').click(function(e) {
     $("html, body").animate({
         scrollTop: 0
     }, "slow");
@@ -15,6 +22,7 @@ $(window).scroll(function() {
 var menu_selector = ".menu"; // Переменная должна содержать название класса или идентификатора, обертки нашего меню.
 
 function onScroll() {
+  var top_scroll = $(document).scrollTop();
     var scroll_top = $(document).scrollTop() + 100;
 
     $(menu_selector + " a").each(function() {
@@ -31,7 +39,53 @@ function onScroll() {
         }
     });
 
+
+
+    if (numo.top <= (top_scroll + document.body.clientHeight-120) && $(".circles").hasClass('noanimate')===false) {
+						console.log("string");
+						$('.circle span').each(function(){
+							number = $(this).html();
+							$(this).animate({
+								num: number - 1
+							}, {
+								duration: 4000,
+								step: function (num){
+									this.innerHTML = (num + 1).toFixed(0);
+								}
+							});
+						})
+						$(".circles").addClass('noanimate');
+					}
+
 }
+
+(function($){
+
+    $.fn.shuffle = function() {
+
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+
+        return $(shuffled);
+
+    };
+
+})(jQuery);
+$('.slider img').shuffle();
+
+
 
 
 $(document).on("scroll", onScroll);
@@ -128,4 +182,12 @@ $(".mm").click(function(e) {
 });
 $("body").on( "click", ".menu.active a","click", function() {
   $(".menu").removeClass("active");
+});
+$(".order").click(function(e) {
+    e.preventDefault();
+
+    var total = $("#total-value").data("v");
+    $("#send-total").val(total);
+    $(".st span").html(total);
+    $("#layer").addClass("active");
 });
